@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <img src="" class="rocket" alt="rocket">
+
+    <div class="value">reqeustAnimationFrame</div>
+
+    <script>
+        const rocket = document.querySelector('.rocket');
+        const value = document.querySelector('.value');
+
+
+        let yPos = 0;
+        let refId;
+        let errorRange= 0; // 오차범위
+
+        function render (){
+
+            value.innerHTML = yPos;
+            yPos += 10;
+
+            rocket.style.transition = `translateY(${-yPos}px)`
+            refId = requestAnimationFrame(render)
+
+            if(yPos > 500){
+                cancelAnimationFrame(refId)
+            }
+        }
+
+        renderer();
+
+        window.addEventListener('click',()=>{
+
+            // 멈춤
+            cancelAnimationFrame(refId)
+        })
+    </script>
+    
+</body>
+</html>

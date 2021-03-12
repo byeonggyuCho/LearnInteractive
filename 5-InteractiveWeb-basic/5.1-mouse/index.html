@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>test</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <style>
+      body {
+        position:relative;
+        background-color: black;
+        /* cursor: none; */
+        height: 100vh;
+      }
+      .position {
+        color: #fff;
+      }
+      .cursor_icon {
+        position: absolute;
+        width : 100px;
+        height : 100px;
+        background-color: red;
+        top:0;
+        left:0;
+
+        border-radius:50%;
+        margin: -50px 0 0 -50px;
+        transition: all 1s ease-out;
+        /* right:0; */
+      }
+      .startBtn {
+        font-size:40px;
+        font-weight: bold;
+        background: #fff;
+        color: red;
+        padding:30px 80px;
+        margin: 50px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+      }
+      .startBtn:hover{
+        background: red;
+        color:#fff;
+        padding: 100px;
+      }
+    </style>
+    <script>
+     let $customCursor = null ;     
+     let x =0 ,y=0;
+     let mx = 0;
+     let my = 0;
+
+     let speed = 0.05;
+
+        function loop(){
+
+
+          mx += (x - mx)* speed;
+          my += (y - my)* speed;
+
+            $customCursor.style.transform = `translate(${mx}px, ${ my}px)`
+            window.requestAnimationFrame(loop);
+        }
+
+
+   
+        window.onload = function(){
+
+          const $h1 = document.querySelector(".position");
+           $customCursor = document.querySelector(".cursor_icon");
+
+    
+      
+          window.addEventListener("click", function handler (e){
+
+            x= e.clientX;
+            y= e.clientY;
+
+            $h1.innerText = `${x},${y}`;
+
+            console.log(x,y);
+            $customCursor.style.transform = `translate(${x}px, ${ y}px)`;
+
+            
+          })
+
+            // loop($customCursor, x,y)
+        
+        }
+
+     
+    </script>
+
+</head>
+<body>
+  <h1 class='position'></h1>
+  <button class="startBtn">Start!</button>
+  <div class="cursor_icon"></div>
+</body>
+</html>

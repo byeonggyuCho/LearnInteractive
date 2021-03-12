@@ -1,0 +1,19 @@
+body{
+    position: relative;
+    background-color: black;
+    overflow:hidden;
+    height: 100vh;
+}
+
+
+.human {
+    position: relative;
+    left:50%;
+    width:200px;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.backImg {
+    
+}

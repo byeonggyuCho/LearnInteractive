@@ -1,0 +1,16 @@
+{
+  "name": "apple-clone",
+  "version": "1.0.0",
+  "description": "1. 스트롤을 이용한 인터렉션을 학습해본다.\r 2. 상황에 맞는 올바른 css단위를 학습한다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "git+https://github.com/CaterJo/LernInteraction.git",
+  "author": "Byeonggyu <byeonggyu303@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CaterJo/LernInteraction/issues"
+  },
+  "homepage": "https://github.com/CaterJo/LernInteraction#readme"
+}
