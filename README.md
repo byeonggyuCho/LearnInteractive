@@ -60,3 +60,5 @@ scrollTo(0, 0);
 ## 참고
 
 [How to import all images from a folder in ReactJS](https://stackoverflow.com/questions/53762640/how-to-import-all-images-from-a-folder-in-reactjs/53762705)
+
+[더미 생성기](http://hangul.thefron.me/)
